@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <script>
+      // Verificação de sessão via localStorage
+      if (!localStorage.getItem('usuario')) {
+        window.location.href = '../home-page/login.html';
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagens/sebo.avif" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style_menu.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Menu Sebaria</title>
+</head>
+
+<body class="body-menu">
+    
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <a class="navbar-brand" href="menu.html">
+            <img src="../imagens/home-page.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="menu.html"><i class="bi bi-house-door-fill"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../livro-page/livro.html"><i class="bi bi-book"></i> Livro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../cd-page/cd.html"><i class="bi bi-disc"></i> CD</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <button type="button" class="btn btn-danger btn-lg btn-sair" onclick="window.location.href='../back/logout.php'">Sair</button>
+        </div>
+    </nav>
+
+    <!-- Carrossel -->
+    <section class="carousel-section">
+        <div id="img-carousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+            <ol class="carousel-indicators">
+                <li data-target="#img-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#img-carousel" data-slide-to="1"></li>
+                <li data-target="#img-carousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+                <!-- Slides dinâmicos dos livros serão inseridos via JS -->
+            </div>
+
+            <!-- Controles -->
+            <a class="carousel-control-prev" href="#img-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#img-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="mt-2 container-items">
+        <div id="cds-dinamicos-1" class="row align-items-start row-items"></div>
+        <div id="cds-dinamicos-2" class="row align-items-center row-items"></div>
+        <div id="livros-dinamicos" class="row align-items-start row-items mt-4"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sebaria GM. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="modalTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+            
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitulo">Título do Livro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" id="modalResumo">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bootstrap para mensagens -->
+    <div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="msgModalLabel">Mensagem</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="msgModalBody"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGaI3/2lAoAXG8czn+PR+NxZV2" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function getUrlParam(param) {
+        var url = new URL(window.location.href);
+        return url.searchParams.get(param);
+      }
+      $(document).ready(function() {
+        var msg = getUrlParam('msg');
+        var type = getUrlParam('type');
+        if (msg) {
+          var modalBody = document.getElementById('msgModalBody');
+          modalBody.innerText = msg;
+          if(type === 'sucesso') {
+            modalBody.classList.add('text-success');
+          } else {
+            modalBody.classList.add('text-danger');
+          }
+          $('#msgModal').modal('show');
+        }
+      });
+    </script>
+</body>
+</html>

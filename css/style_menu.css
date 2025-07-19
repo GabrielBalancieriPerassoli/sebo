@@ -1,0 +1,274 @@
+/* ===== Layout Global ===== */
+.body-menu {
+    background-color: #e0e0e3b9; /* Gelo suave */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2d2d2d;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #274C77; 
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    z-index: 2;
+}
+
+.navbar-brand img {
+    width: 65px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 12px;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    padding: 10px 18px;
+    color: #ffffff;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-link.active {
+    color: #ffe8f0;
+    border-bottom: 2px solid #ffe8f0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #a29bfe !important;
+}
+
+/* ===== Carrossel ===== */
+.carousel-section {
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 10px;
+    padding: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+.carousel-caption h1 {
+    color: #fff !important;
+    text-shadow: 1px 1px 6px #274C77, 0 0 2px #0000006c;
+}
+
+/* ===== Container de Itens ===== */
+.container-items {
+    background-color: #ffffff;
+    width: calc(100% - 30px);
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.item-box {
+    background-color: #274C77; 
+    border-radius: 10px;
+    padding: 14px;
+    margin: 15px 0;
+    text-align: center;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item-box:hover {
+    background-color: #6c5ce7;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.container-items img {
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.item-title {
+    font-size: 1.2em;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #ffffff;
+}
+
+/* ===== Botão Sair ===== */
+.btn-sair {
+    font-size: 1.1rem;
+    background-color: #ff5e7e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s, background-color 0.2s;
+}
+
+.btn-sair:hover, .btn-sair:focus {
+    background-color: #e14b6c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #274C77;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.95em;
+    letter-spacing: 1px;
+}
+
+/* ===== Botões de Interação ===== */
+.btn-play-icon {
+    background: none !important;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #2d2d2d;
+    font-size: 1.7em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, color 0.2s;
+    margin-right: 4px;
+    gap: 4px;
+}
+
+.btn-play-icon:hover,
+.btn-play-icon:focus {
+    transform: scale(1.4);
+    color: #2d2d2d;
+}
+
+.btn-play-icon:focus,
+.btn-play-icon:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.btn-play-icon .gif-som {
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 4px;
+    margin-right: 10px;
+    animation-duration: 2s !important;
+}
+
+/* ===== Barra de Progresso Áudio ===== */
+.audio-progress-container {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row;
+    font-size: 0.95em;
+}
+
+.audio-progress-bar-bg {
+    flex: 1;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 8px;
+    position: relative;
+}
+
+.audio-progress-bar {
+    height: 100%;
+    background: #5442da;
+    width: 0%;
+    border-radius: 4px;
+    transition: width 0.2s linear;
+}
+
+.btn-play-icon.playing:hover,
+.btn-play-icon.playing:focus {
+    transform: none !important;
+}
+
+/* ===== Botão Modal Livro ===== */
+.btn-modal-livro {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.btn-modal-livro:hover,
+.btn-modal-livro:focus {
+    color: inherit;
+    outline: none;
+}
+
+/* ===== Setas do Carrossel (Bootstrap) ===== */
+/* Setas com fundo roxo e centralizadas */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #6c5ce7; /* Roxo padrão */
+    border-radius: 50%;
+    background-size: 60% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+}
+
+/* Sombras sutis para dar profundidade */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Hover: muda apenas o fundo da bolinha para roxo mais escuro */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #4b2991; /* Roxo mais escuro no hover */
+}

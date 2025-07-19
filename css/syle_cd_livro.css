@@ -1,0 +1,125 @@
+/* Sticky footer */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.95em;
+    padding: 16px 0 8px 0;
+    letter-spacing: 1px;
+}
+
+h2{
+    color: #274C77;
+}
+
+/* Tabela */
+.table thead.thead-dark th {
+    background-color: #274C77 !important;
+    color: #fff !important;
+    border-color: #274C77 !important;
+}
+.table {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.table thead.thead-dark th {
+    background: linear-gradient(90deg, #274C77 60%, #274c77f1 100%) !important;
+    color: #fff !important;
+    border: none;
+}
+.table td, .table th {
+    vertical-align: middle !important;
+}
+
+/* Grid principal (para livros e CDs) */
+.grid-main {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 20px;
+}
+.grid-main > div {
+    width: 850px; 
+    max-width: 100%;
+}
+
+/* Campo de pesquisa */
+.search-input {
+    width: 450px;
+    max-width: 100%;
+    font-size: 1.3em;
+    padding: 14px 18px;
+}
+
+
+/* Botões dos modais (usado para livro e CD) */
+.btn-modal {
+    min-width: 90px;
+    height: 45px;
+    font-size: 1em;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    font-weight: 400;
+}
+
+/* Conteúdo principal */
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-adicionar {
+    background-color: #274C77 !important;
+    color: #fff !important;
+    border: none;
+    font-size: 1em;
+    padding: 12px 48px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    height: 52px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-adicionar:hover,
+.btn-adicionar:focus {
+    background-color: #1d3556 !important;
+    color: #fff !important;
+}
+
+.btn-cadastrar {
+    background-color: #274C77 !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-cadastrar:hover,
+.btn-cadastrar:focus {
+    background-color: #6096ba !important;
+    color: #fff !important;
+}
+
+.container.mt-5 {
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 4px 24px 0 rgba(39,76,119,0.08);
+    padding: 32px 24px;
+    position: relative;
+    z-index: 1;
+    width: 98vw;         /* aumenta a largura */
+    max-width: 1700px;   /* aumenta o limite máximo */
+}
